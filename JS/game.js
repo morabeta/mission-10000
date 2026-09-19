@@ -600,7 +600,7 @@ btnLancerJoker.addEventListener(
 function jouerSonnerie() {
 
     const son = new Audio(
-        "assets/sounds/alert.mp3"
+        "./assets/sounds/alert.mp3"
     );
 
     son.volume = 0.8;
