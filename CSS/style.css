@@ -1,0 +1,1433 @@
+/* =========================================================
+   MISSION 10 000 €
+   Festival des Solidarités de la Jeunesse 2026
+   ========================================================= */
+
+
+/* =========================
+   VARIABLES
+   ========================= */
+
+   :root {
+    --rouge: #e30613;
+    --rouge-fonce: #b9000b;
+
+    --bleu: #0077b6;
+    --bleu-fonce: #004f7c;
+
+    --jaune: #ffd500;
+
+    --vert: #2a9d8f;
+
+    --blanc: #ffffff;
+    --fond: #f4f6f8;
+    --texte: #222222;
+    --gris: #6b7280;
+
+    --ombre: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+    --radius: 22px;
+}
+
+
+/* =========================
+   RESET
+   ========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fond);
+    color: var(--texte);
+}
+
+
+/* =========================
+   APPLICATION
+   ========================= */
+
+#app {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   GESTION DES ÉCRANS
+   ========================= */
+
+/*
+   IMPORTANT :
+   tous les écrans sont cachés.
+*/
+
+.screen {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 30px 20px;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/*
+   Seul l'écran avec la classe
+   "active" apparaît.
+*/
+
+.screen.active {
+    display: flex;
+}
+
+
+/* =========================
+   ÉCRAN ACCUEIL
+   ========================= */
+
+#accueil {
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255, 213, 0, 0.25),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f3f5f7
+        );
+}
+
+
+/* Logo */
+
+.logo {
+    margin-bottom: 25px;
+}
+
+.logo img {
+    width: 130px;
+    max-width: 40vw;
+}
+
+
+/* Contenu */
+
+.contenu {
+    width: 100%;
+    max-width: 650px;
+}
+
+
+/* Festival */
+
+.festival {
+    color: var(--gris);
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 15px;
+}
+
+
+/* Titre */
+
+#accueil h1 {
+    font-size: clamp(2.4rem, 8vw, 4.5rem);
+
+    color: var(--rouge);
+
+    line-height: 1;
+
+    margin-bottom: 12px;
+}
+
+#accueil h2 {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+
+    margin-bottom: 30px;
+}
+
+
+/* Alerte */
+
+.alerte {
+    display: inline-block;
+
+    background: #ffe7e9;
+    color: var(--rouge);
+
+    border: 2px solid var(--rouge);
+
+    border-radius: 50px;
+
+    padding: 10px 20px;
+
+    font-weight: bold;
+
+    margin-bottom: 25px;
+}
+
+
+/* Paragraphes accueil */
+
+#accueil .contenu > p:not(.festival) {
+    max-width: 550px;
+
+    margin: 0 auto 15px;
+
+    line-height: 1.6;
+
+    font-size: 1.05rem;
+}
+
+
+/* =========================
+   BOUTONS
+   ========================= */
+
+button {
+    border: none;
+    outline: none;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* Boutons principaux */
+
+#btnCommencer,
+#btnLancerMission,
+#btnEtapeSuivante,
+#btnPitch,
+#btnTerminer,
+#btnFermerJoker {
+
+    margin-top: 25px;
+
+    padding: 17px 28px;
+
+    border-radius: 50px;
+
+    background: var(--rouge);
+
+    color: white;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    letter-spacing: 0.5px;
+
+    box-shadow:
+        0 8px 20px rgba(227, 6, 19, 0.25);
+}
+
+
+#btnCommencer:hover,
+#btnLancerMission:hover,
+#btnEtapeSuivante:hover,
+#btnPitch:hover,
+#btnTerminer:hover,
+#btnFermerJoker:hover {
+
+    transform: translateY(-3px);
+
+    background: var(--rouge-fonce);
+
+    box-shadow:
+        0 12px 25px rgba(227, 6, 19, 0.35);
+}
+
+
+button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================
+   CHOIX DES GROUPES
+   ========================= */
+
+#choix-groupe {
+    background: var(--fond);
+}
+
+#choix-groupe h2 {
+    font-size: clamp(2rem, 6vw, 3.3rem);
+
+    margin-bottom: 15px;
+}
+
+#choix-groupe > p {
+    max-width: 600px;
+
+    color: var(--gris);
+
+    line-height: 1.6;
+
+    margin-bottom: 35px;
+}
+
+
+/* Grille */
+
+.groupes {
+    width: 100%;
+    max-width: 900px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* Carte groupe */
+
+.groupe {
+    min-height: 190px;
+
+    padding: 25px;
+
+    border-radius: var(--radius);
+
+    background: white;
+
+    box-shadow: var(--ombre);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--texte);
+}
+
+
+.groupe:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 16px 35px rgba(0, 0, 0, 0.16);
+}
+
+
+.groupe .icone {
+    font-size: 2.8rem;
+}
+
+
+.groupe strong {
+    color: var(--rouge);
+
+    font-size: 0.85rem;
+
+    letter-spacing: 1px;
+}
+
+
+.groupe span:last-child {
+    font-size: 1.15rem;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   PRÉSENTATION MISSION
+   ========================= */
+
+#mission {
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f1f3f5
+        );
+}
+
+
+.mission-header > p {
+    color: var(--rouge);
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+
+.mission-header h2 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+
+    max-width: 750px;
+
+    margin-bottom: 30px;
+}
+
+
+/* Objectif */
+
+.objectif {
+    width: 100%;
+    max-width: 650px;
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--ombre);
+
+    margin-bottom: 25px;
+}
+
+
+.objectif h3 {
+    margin-bottom: 12px;
+
+    color: var(--bleu);
+}
+
+
+.objectif p {
+    line-height: 1.6;
+}
+
+
+/* 10 000 € */
+
+.objectif-financier {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding: 15px 35px;
+
+    border-radius: 18px;
+
+    background: #fff7cc;
+}
+
+
+.objectif-financier span {
+    font-size: 0.75rem;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.objectif-financier strong {
+    font-size: 2.3rem;
+
+    color: #b88600;
+}
+
+
+/* =========================
+   ÉCRAN DE JEU
+   ========================= */
+
+#jeu {
+    justify-content: flex-start;
+
+    background: #f3f5f7;
+}
+
+
+/* Header */
+
+.jeu-header {
+    width: 100%;
+    max-width: 850px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: white;
+
+    padding: 15px 20px;
+
+    border-radius: 18px;
+
+    box-shadow: var(--ombre);
+
+    margin-bottom: 20px;
+
+    text-align: left;
+}
+
+
+.jeu-header div:first-child {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.jeu-header div:first-child span {
+    color: var(--gris);
+
+    font-size: 0.75rem;
+
+    text-transform: uppercase;
+}
+
+
+.chrono {
+    background: #222;
+
+    color: white;
+
+    padding: 10px 17px;
+
+    border-radius: 50px;
+
+    font-size: 1.1rem;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   PROGRESSION
+   ========================= */
+
+.progression {
+    width: 100%;
+    max-width: 850px;
+
+    margin-bottom: 25px;
+}
+
+
+.progression-barre {
+    width: 100%;
+    height: 10px;
+
+    background: #dedede;
+
+    border-radius: 50px;
+
+    overflow: hidden;
+}
+
+
+#progressionValeur {
+    width: 20%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--rouge),
+            #ff5964
+        );
+
+    border-radius: 50px;
+
+    transition: width 0.5s ease;
+}
+
+
+.progression p {
+    margin-top: 8px;
+
+    color: var(--gris);
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================
+   CARTE DU DÉFI
+   ========================= */
+
+.carte {
+    width: 100%;
+    max-width: 700px;
+
+    min-height: 330px;
+
+    background: white;
+
+    border-radius: 28px;
+
+    padding: 40px 30px;
+
+    box-shadow: var(--ombre);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+#carteIcone {
+    font-size: 3.5rem;
+
+    margin-bottom: 15px;
+}
+
+
+#carteType {
+    color: var(--rouge);
+
+    font-weight: bold;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+
+#carteTitre {
+    font-size: clamp(1.7rem, 5vw, 2.5rem);
+
+    margin-bottom: 15px;
+}
+
+
+#carteDescription {
+    max-width: 550px;
+
+    line-height: 1.6;
+
+    color: #444;
+}
+
+
+/* =========================
+   JOKERS
+   ========================= */
+
+.jokers {
+    width: 100%;
+    max-width: 700px;
+
+    margin-top: 25px;
+}
+
+
+.jokers h3 {
+    margin-bottom: 15px;
+}
+
+
+.liste-jokers {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+}
+
+
+.joker {
+    background: white;
+
+    border: 2px solid #e2e2e2;
+
+    border-radius: 18px;
+
+    padding: 15px 10px;
+
+    font-size: 0.8rem;
+
+    font-weight: bold;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    align-items: center;
+}
+
+
+.joker span {
+    font-size: 1.7rem;
+}
+
+
+.joker:hover {
+    border-color: var(--jaune);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   POPUP JOKER
+   ========================= */
+
+.popup {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    background:
+        rgba(0, 0, 0, 0.65);
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+
+.popup.active {
+    display: flex;
+}
+
+
+.popup-contenu {
+    width: 100%;
+    max-width: 480px;
+
+    background: white;
+
+    border-radius: 28px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+
+#jokerIcone {
+    font-size: 4rem;
+
+    margin-bottom: 15px;
+}
+
+
+#jokerTitre {
+    margin-bottom: 15px;
+}
+
+
+#jokerDescription {
+    line-height: 1.6;
+}
+
+
+/* =========================
+   DÉFI 10 000 €
+   ========================= */
+
+#objectif10000 {
+    background:
+        radial-gradient(
+            circle at center,
+            #fff9d9,
+            #f4f6f8
+        );
+}
+
+
+.argent {
+    font-size: 5rem;
+
+    margin-bottom: 15px;
+}
+
+
+#objectif10000 h2 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+
+    margin-bottom: 25px;
+}
+
+
+#objectif10000 > p {
+    max-width: 600px;
+
+    line-height: 1.6;
+
+    margin-bottom: 10px;
+}
+
+
+.montant {
+    font-size: clamp(3rem, 10vw, 5.5rem);
+
+    font-weight: bold;
+
+    color: #c28b00;
+
+    margin: 20px 0;
+}
+
+
+.exemple {
+    background: white;
+
+    padding: 15px 20px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   PITCH
+   ========================= */
+
+#pitch {
+    background: #f4f6f8;
+}
+
+
+.pitch-icon {
+    font-size: 4.5rem;
+
+    margin-bottom: 10px;
+}
+
+
+#pitch h2 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+
+    margin-bottom: 10px;
+}
+
+
+#pitch > p {
+    color: var(--gris);
+
+    margin-bottom: 25px;
+}
+
+
+.pitch-structure {
+    width: 100%;
+    max-width: 650px;
+
+    display: grid;
+
+    gap: 10px;
+
+    text-align: left;
+}
+
+
+.pitch-structure div {
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 14px 18px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.06);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.pitch-structure span {
+    min-width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    background: var(--rouge);
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+}
+
+
+.pitch-timer {
+    margin-top: 25px;
+
+    background: #222;
+
+    color: white;
+
+    padding: 12px 25px;
+
+    border-radius: 50px;
+
+    font-size: 1.5rem;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   ÉQUIPE PRÊTE
+   ========================= */
+
+   #fin {
+    background:
+        radial-gradient(
+            circle at top,
+            #fff8cf,
+            #ffffff 55%
+        );
+}
+
+
+/* Gros check */
+
+#fin .success {
+    font-size: 5rem;
+
+    margin-bottom: 15px;
+
+    animation: checkApparition 0.6s ease;
+}
+
+
+/* Petit texte supérieur */
+
+.fin-label {
+    color: var(--vert);
+
+    font-weight: bold;
+
+    font-size: 0.85rem;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+
+/* ÉQUIPE PRÊTE */
+
+#fin h2 {
+    font-size: clamp(2.7rem, 8vw, 5rem);
+
+    color: var(--texte);
+
+    margin-bottom: 20px;
+}
+
+
+/* Description */
+
+.fin-description {
+    max-width: 550px;
+
+    font-size: 1.05rem;
+
+    line-height: 1.6;
+
+    color: var(--gris);
+
+    margin-bottom: 5px;
+}
+
+
+/* =========================
+   INFORMATIONS RESTITUTION
+   ========================= */
+
+.restitution-info {
+
+    width: 100%;
+    max-width: 600px;
+
+    margin-top: 35px;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow: var(--ombre);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+.restitution-bloc {
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.restitution-icone {
+    font-size: 2.5rem;
+}
+
+
+.restitution-label {
+
+    color: var(--gris);
+
+    font-size: 0.7rem;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+.restitution-bloc strong {
+
+    font-size: 1.8rem;
+
+    color: var(--rouge);
+}
+
+
+/* Ligne entre les deux */
+
+.restitution-separateur {
+
+    width: 1px;
+    height: 80px;
+
+    background: #dddddd;
+}
+
+
+/* Message final */
+
+.message-restitution {
+
+    margin-top: 25px;
+
+    padding: 13px 20px;
+
+    background: #fff7cc;
+
+    border-radius: 50px;
+
+    font-weight: bold;
+}
+
+
+/* Animation du check */
+
+@keyframes checkApparition {
+
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* Téléphone */
+
+@media (max-width: 500px) {
+
+    .restitution-info {
+        gap: 15px;
+
+        padding: 20px 12px;
+    }
+
+
+    .restitution-bloc strong {
+        font-size: 1.4rem;
+    }
+
+
+    .restitution-separateur {
+        height: 70px;
+    }
+
+}
+
+/* =========================
+   PETITE ANIMATION
+   ========================= */
+
+.screen.active {
+    animation: apparition 0.4s ease;
+}
+
+
+@keyframes apparition {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   TÉLÉPHONE
+   ========================= */
+
+@media (max-width: 650px) {
+
+    .screen {
+        padding: 22px 15px;
+    }
+
+
+    /* Groupes en colonne */
+
+    .groupes {
+        grid-template-columns: 1fr;
+    }
+
+
+    .groupe {
+        min-height: 125px;
+
+        flex-direction: row;
+
+        justify-content: flex-start;
+
+        text-align: left;
+    }
+
+
+    .groupe .icone {
+        font-size: 2.3rem;
+    }
+
+
+    /* Jeu */
+
+    .jeu-header {
+        padding: 12px;
+    }
+
+
+    .carte {
+        padding: 30px 20px;
+
+        min-height: 300px;
+    }
+
+
+    /* Jokers */
+
+    .liste-jokers {
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 7px;
+    }
+
+
+    .joker {
+        font-size: 0.68rem;
+
+        padding: 12px 5px;
+    }
+
+
+    /* Calcul final */
+
+    .calcul {
+        font-size: 0.85rem;
+    }
+}
+
+/* =========================
+   ALERTES CHRONO
+   ========================= */
+
+   .chrono.timer-warning {
+    background: #e6a700;
+}
+
+.chrono.timer-danger {
+    background: #e30613;
+
+    animation: pulseTimer 1s infinite;
+}
+
+
+@keyframes pulseTimer {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+/* =========================================================
+   JOKER UTILISÉ
+   ========================================================= */
+
+   .joker.utilise {
+    opacity: 0.45;
+    filter: grayscale(1);
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+.joker.utilise::after {
+    content: "✓ UTILISÉ";
+
+    margin-top: 4px;
+
+    font-size: 0.6rem;
+    font-weight: bold;
+
+    color: var(--rouge);
+}
+
+
+/* =========================================================
+   CHRONO DU JOKER
+   ========================================================= */
+
+.joker-timer-container {
+    display: none;
+
+    margin: 25px 0 10px;
+
+    padding: 18px;
+
+    background: #f4f6f8;
+
+    border-radius: 18px;
+}
+
+
+.joker-timer-container p {
+    margin-bottom: 7px;
+
+    color: var(--gris);
+
+    font-size: 0.7rem;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+#jokerTimer {
+    font-size: 3.5rem;
+    font-weight: 900;
+
+    color: var(--texte);
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* 10 dernières secondes */
+
+#jokerTimer.joker-timer-danger {
+    color: var(--rouge);
+
+    animation: pulseJoker 0.7s infinite;
+}
+
+
+/* Fin du temps */
+
+#jokerTimer.joker-timer-fin {
+    color: var(--rouge);
+}
+
+
+/* =========================================================
+   GROS BOUTON START DU JOKER
+   ========================================================= */
+
+.btn-lancer-joker {
+    display: none;
+
+    width: 100%;
+    max-width: 380px;
+
+    margin: 22px auto 5px;
+
+    padding: 19px 25px;
+
+    border: none;
+    border-radius: 16px;
+
+    background: var(--rouge);
+    color: white;
+
+    font-size: 1rem;
+    font-weight: 900;
+
+    letter-spacing: 0.8px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 0 var(--rouge-fonce),
+        0 12px 25px rgba(227, 6, 19, 0.28);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+
+/* Quand la souris passe dessus */
+
+.btn-lancer-joker:hover {
+    background: var(--rouge-fonce);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 0 #8f0008,
+        0 14px 28px rgba(227, 6, 19, 0.32);
+}
+/* Effet lorsqu'on appuie */
+.btn-lancer-joker:active {
+    transform: translateY(5px);
+
+    box-shadow:
+        0 2px 0 var(--rouge-fonce);
+}
+/* Pendant le chrono */
+.btn-lancer-joker:disabled {
+    background: #333333;
+    color: white;
+
+    opacity: 1;
+
+    cursor: default;
+
+    transform: none;
+
+    box-shadow:
+        0 4px 0 #111111;
+}
+/* =========================================================
+   BOUTON RETOUR DU POPUP
+   ========================================================= */
+
+#btnFermerJoker {
+    width: 100%;
+    max-width: 380px;
+}
+/* =========================================================
+   ANIMATION DU CHRONO JOKER
+   ========================================================= */
+
+@keyframes pulseJoker {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.12);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.no-wrap {
+    white-space: nowrap;
+}

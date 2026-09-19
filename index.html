@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Mission 10 000 € | Secours populaire</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ========================================= -->
+    <!-- ÉCRAN 1 : ACCUEIL                         -->
+    <!-- ========================================= -->
+
+    <main id="app">
+
+        <section id="accueil" class="screen active">
+
+            <div class="logo">
+                <img src="assets/images/Logo_Secours_populaire_français.png"
+                     alt="Logo Secours populaire français">
+            </div>
+
+            <div class="contenu">
+
+                <p class="festival">
+                    Festival des Solidarités de la Jeunesse 2026
+                </p>
+
+                <h1>MISSION 10 000 €</h1>
+
+                <h2>Comment réinventer la collecte ?</h2>
+
+                <div class="alerte">
+                    🚨 ALERTE SOLIDARITÉ
+                </div>
+
+                <p>
+                    Le Secours populaire vient de perdre
+                    une subvention publique de
+                    <strong class="no-wrap">40 000 €</strong>.
+                </p>
+
+                <p>
+                    Votre mission : imaginer de nouvelles
+                    façons de collecter pour continuer
+                    à faire vivre la solidarité.
+                </p>
+
+                <button id="btnCommencer">
+                    COMMENCER LA MISSION
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- ÉCRAN 2 : CHOIX DU GROUPE                  -->
+        <!-- ========================================= -->
+
+        <section id="choix-groupe" class="screen">
+
+            <h2>Choisissez votre mission</h2>
+
+            <p>
+                Chaque équipe doit trouver une solution
+                permettant de récolter
+                <strong>10 000 €</strong>.
+            </p>
+
+            <div class="groupes">
+
+                <button class="groupe" data-groupe="1">
+
+                    <span class="icone">🎪</span>
+
+                    <strong>MISSION 1</strong>
+
+                    <span>
+                        Collecte sur des événements
+                    </span>
+
+                </button>
+
+
+                <button class="groupe" data-groupe="2">
+
+                    <span class="icone">📱</span>
+
+                    <strong>MISSION 2</strong>
+
+                    <span>
+                        Outils numériques
+                    </span>
+
+                </button>
+
+
+                <button class="groupe" data-groupe="3">
+
+                    <span class="icone">🪙</span>
+
+                    <strong>MISSION 3</strong>
+
+                    <span>
+                        Réinventer la collecte au tronc
+                    </span>
+
+                </button>
+
+
+                <button class="groupe" data-groupe="4">
+
+                    <span class="icone">🏪</span>
+
+                    <strong>MISSION 4</strong>
+
+                    <span>
+                        Mobiliser les commerçants
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- ÉCRAN 3 : PRÉSENTATION DE LA MISSION       -->
+        <!-- ========================================= -->
+
+        <section id="mission" class="screen">
+
+            <div class="mission-header">
+
+                <p>
+                    VOTRE MISSION
+                </p>
+
+                <!-- Sera rempli automatiquement -->
+                <h2 id="missionTitre">
+                    Nom de la mission
+                </h2>
+
+            </div>
+
+
+            <div class="objectif">
+
+                <h3>🎯 Votre objectif</h3>
+
+                <!-- Sera rempli par JavaScript -->
+                <p id="missionDescription">
+                    Description de la mission
+                </p>
+
+            </div>
+
+
+            <div class="objectif-financier">
+
+                <span>OBJECTIF</span>
+
+                <strong>
+                    10 000 €
+                </strong>
+
+            </div>
+
+
+            <button id="btnLancerMission">
+                LANCER LE CHRONO
+            </button>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- ÉCRAN 4 : JEU                              -->
+        <!-- ========================================= -->
+
+        <section id="jeu" class="screen">
+
+            <!-- Barre supérieure -->
+
+            <header class="jeu-header">
+
+                <div>
+                    <span>Mission</span>
+                    <strong id="jeuNomMission">
+                        Événement
+                    </strong>
+                </div>
+
+
+                <div class="chrono">
+
+                    ⏱️
+
+                    <span id="timer">
+                        20:00
+                    </span>
+
+                </div>
+
+            </header>
+
+
+            <!-- Progression -->
+
+            <div class="progression">
+
+                <div class="progression-barre">
+                    <div id="progressionValeur"></div>
+                </div>
+
+                <p>
+                    Étape
+                    <span id="etapeActuelle">1</span>
+                    / 5
+                </p>
+
+            </div>
+
+
+            <!-- Carte principale -->
+
+            <div id="carteDefi" class="carte">
+
+                <div id="carteIcone">
+                    💡
+                </div>
+
+                <p id="carteType">
+                    PREMIÈRE MISSION
+                </p>
+
+                <h2 id="carteTitre">
+                    Trouvez votre idée !
+                </h2>
+
+                <p id="carteDescription">
+                    Imaginez ensemble votre action
+                    et donnez-lui un nom.
+                </p>
+
+
+                <button id="btnEtapeSuivante">
+                    NOUS AVONS NOTRE IDÉE
+                </button>
+
+            </div>
+
+
+            <!-- ================================= -->
+            <!-- JOKERS                            -->
+            <!-- ================================= -->
+
+            <div class="jokers">
+
+                <h3>Vos jokers</h3>
+
+                <div class="liste-jokers">
+
+                    <button class="joker"
+                            data-joker="indice">
+
+                        <span>💡</span>
+
+                        Coup de pouce
+
+                    </button>
+
+
+                    <button class="joker"
+                            data-joker="benevole">
+
+                        <span>☎️</span>
+
+                        SOS ANIMATEUR
+
+                    </button>
+
+
+                    <button class="joker"
+                            data-joker="echange">
+
+                        <span>🔄</span>
+
+                        ESPION SOLIDAIRE
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- ÉCRAN 5 : POP-UP JOKER                     -->
+        <!-- ========================================= -->
+
+        <section id="popupJoker" class="popup">
+
+            <div class="popup-contenu">
+        
+                <div id="jokerIcone">
+                    💡
+                </div>
+        
+                <h2 id="jokerTitre">
+                    Coup de pouce
+                </h2>
+        
+                <p id="jokerDescription">
+                    Voici votre indice...
+                </p>
+        
+        
+                <!-- Chronomètre utilisé par certains jokers -->
+        
+                <div id="jokerTimerContainer"
+                     class="joker-timer-container">
+        
+                    <p>⏱️ TEMPS RESTANT</p>
+        
+                    <div id="jokerTimer">
+                        01:00
+                    </div>
+        
+                </div>
+        
+        
+                <!-- Bouton pour lancer le joker chronométré -->
+        
+                <button id="btnLancerJoker"
+                        class="btn-lancer-joker">
+        
+                    LANCER LE JOKER
+        
+                </button>
+        
+        
+                <button id="btnFermerJoker">
+                    TERMINER LE JOKER ET REVENIR
+                </button>
+        
+            </div>
+        
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- ÉCRAN 6 : DÉFI DES 10 000 €               -->
+        <!-- ========================================= -->
+
+        <section id="objectif10000" class="screen">
+
+            <div class="argent">
+                💰
+            </div>
+
+            <h2>
+                LE DÉFI DES 10 000 €
+            </h2>
+
+            <p>
+                Votre idée semble intéressante...
+            </p>
+
+            <p>
+                Mais maintenant, vous devez montrer
+                comment votre action pourrait permettre
+                d'atteindre :
+            </p>
+
+            <div class="montant">
+                10 000 €
+            </div>
+
+            <p class="exemple">
+
+                Exemple :
+
+                <strong>
+                    2 000 personnes × 5 € = 10 000 €
+                </strong>
+
+            </p>
+
+            <button id="btnPitch">
+                NOUS AVONS NOTRE PLAN
+            </button>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- ÉCRAN 7 : PRÉPARATION DU PITCH             -->
+        <!-- ========================================= -->
+
+        <section id="pitch" class="screen">
+
+            <div class="pitch-icon">
+                🎤
+            </div>
+
+            <h2>
+                PRÉPAREZ VOTRE PITCH !
+            </h2>
+
+            <p>
+                Vous allez présenter votre projet
+                aux autres équipes.
+            </p>
+
+
+            <div class="pitch-structure">
+
+                <div>
+                    <span>1</span>
+                    Nom du projet
+                </div>
+
+                <div>
+                    <span>2</span>
+                    Votre idée
+                </div>
+
+                <div>
+                    <span>3</span>
+                    Comment ça fonctionne ?
+                </div>
+
+                <div>
+                    <span>4</span>
+                    Qui participe ?
+                </div>
+
+                <div>
+                    <span>5</span>
+                    Comment atteindre 10 000 € ?
+                </div>
+
+                <div>
+                    <span>6</span>
+                    Comment avez-vous répondu
+                    aux difficultés ?
+                </div>
+
+            </div>
+
+
+            <div class="pitch-timer">
+                ⏱️
+                <span id="pitchTimer">
+                    02:00
+                </span>
+
+            </div>
+
+
+            <button id="btnTerminer">
+                NOUS SOMMES PRÊTS !
+            </button>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- ÉCRAN 8 : ÉQUIPE PRÊTE                    -->
+        <!-- ========================================= -->
+
+        <section id="fin" class="screen">
+
+            <div class="success">
+                ✅
+            </div>
+
+            <p class="fin-label">
+                MISSION DE PRÉPARATION TERMINÉE
+            </p>
+
+            <h2>
+                ÉQUIPE PRÊTE !
+            </h2>
+
+            <p class="fin-description">
+                Votre mission de préparation est terminée.
+            </p>
+
+            <p class="fin-description">
+                Rejoignez maintenant les autres équipes
+                pour présenter votre idée.
+            </p>
+
+
+            <!-- Informations pour la restitution -->
+
+            <div class="restitution-info">
+
+                <div class="restitution-bloc">
+
+                    <span class="restitution-icone">
+                        🎤
+                    </span>
+
+                    <span class="restitution-label">
+                        TEMPS DE PRÉSENTATION
+                    </span>
+
+                    <strong>
+                        5 MIN
+                    </strong>
+
+                </div>
+
+
+                <div class="restitution-separateur"></div>
+
+
+                <div class="restitution-bloc">
+
+                    <span class="restitution-icone">
+                        💰
+                    </span>
+
+                    <span class="restitution-label">
+                        OBJECTIF
+                    </span>
+
+                    <strong>
+                        10 000 €
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="message-restitution">
+
+                <p>
+                    💡 À vous maintenant de convaincre
+                    les autres équipes !
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ========================================= -->
+    <!-- JAVASCRIPT                                -->
+    <!-- ========================================= -->
+
+    <script src="js/data.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
