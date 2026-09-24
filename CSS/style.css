@@ -119,12 +119,24 @@ body {
 /* Logo */
 
 .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
     margin-bottom: 25px;
 }
 
-.logo img {
+/* Logo Secours populaire */
+.logo img:first-child {
     width: 130px;
-    max-width: 40vw;
+    height: auto;
+}
+
+/* Logo Festival */
+.logo .logo-festival {
+    width: 190px;
+    height: auto;
+    max-width: 45vw;
 }
 
 
@@ -347,8 +359,48 @@ button:active {
 }
 
 
-.groupe .icone {
-    font-size: 2.8rem;
+/* =========================
+   ICONES DES MISSIONS
+   ========================= */
+
+   .groupe .icone {
+    width: 180px;
+    height: 150px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+/* Toutes les images */
+.groupe .icone img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    display: block;
+}
+
+/* Mission 1 */
+.groupe[data-groupe="1"] .icone img {
+    transform: scale(0.90);
+}
+
+/* Mission 2 */
+.groupe[data-groupe="2"] .icone img {
+    transform: scale(0.88);
+}
+
+/* Mission 3 : dessin collecte au tronc */
+.groupe[data-groupe="3"] .icone img {
+    transform: scale(0.92);
+}
+
+/* Mission 4 */
+.groupe[data-groupe="4"] .icone img {
+    transform: scale(0.90);
 }
 
 
@@ -1430,4 +1482,141 @@ button:active {
 }
 .no-wrap {
     white-space: nowrap;
+}
+@media (max-width: 650px) {
+    .logo {
+        gap: 20px;
+    }
+
+    .logo img:first-child {
+        width: 90px;
+    }
+
+    .logo .logo-festival {
+        width: 140px;
+    }
+}
+/* =========================================
+   LOGOS PENDANT LE JEU
+   ========================================= */
+
+   .game-branding {
+    position: fixed;
+    top: 20px;
+    left: 25px;
+
+    display: none;
+    align-items: center;
+    gap: 14px;
+
+    z-index: 100;
+}
+
+.game-branding img {
+    object-fit: contain;
+}
+
+.branding-spf {
+    width: 75px;
+    height: auto;
+}
+
+.branding-festival {
+    width: 145px;
+    height: auto;
+}
+@media (max-width: 600px) {
+
+    .branding-spf {
+        width: 48px;
+    }
+
+    .branding-festival {
+        width: 90px;
+    }
+
+    .game-branding {
+        top: 15px;
+        left: 15px;
+        gap: 8px;
+    }
+}
+#missionTitre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.mission-titre-icone {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+#missionTitre span {
+    display: block;
+}
+@media (max-width: 600px) {
+
+    #missionTitre {
+        gap: 10px;
+    }
+
+    .mission-titre-icone {
+        width: 65px;
+        height: 65px;
+    }
+}
+/* =========================================================
+   IMAGES DES MISSIONS / ÉTAPES / JOKERS
+   ========================================================= */
+
+   .mission-titre-icone {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+}
+
+#missionTitre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+.jeu-mission-icone {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+#jeuNomMission {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.carte-etape-icone {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.joker img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    display: block;
+}
+
+.joker-popup-icone {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 15px;
 }

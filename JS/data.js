@@ -37,7 +37,7 @@ const missions = {
 
         id: 1,
 
-        icone: "🎪",
+        icone: "./assets/images/icons/icon_event.jpeg",
 
         nom: "Collecte sur des événements",
 
@@ -56,7 +56,7 @@ const missions = {
 
             {
                 type: "CRÉATION",
-                icone: "💡",
+                icone: "./assets/images/icons/creation.png",
                 titre: "Inventez votre concept",
 
                 description:
@@ -69,7 +69,7 @@ const missions = {
 
             {
                 type: "CONTRAINTE",
-                icone: "💸",
+                icone: "./assets/images/icons/petit_budget.png",
                 titre: "Petit budget !",
 
                 description:
@@ -82,7 +82,7 @@ const missions = {
 
             {
                 type: "DÉFI",
-                icone: "👥",
+                icone: "./assets/images/icons/generations.png",
                 titre: "Toutes les générations",
 
                 description:
@@ -95,7 +95,7 @@ const missions = {
 
             {
                 type: "IMPRÉVU",
-                icone: "🌧️",
+                icone: "./assets/images/icons/meteo.png",
                 titre: "La météo change tout !",
 
                 description:
@@ -140,7 +140,7 @@ const missions = {
 
         id: 2,
 
-        icone: "📱",
+        icone: "./assets/images/icons/outils_numeriques.png",
 
         nom: "Outils numériques",
 
@@ -155,7 +155,7 @@ const missions = {
 
             {
                 type: "CRÉATION",
-                icone: "💡",
+                icone: "./assets/images/icons/creation.png",
                 titre: "Imaginez votre collecte digitale",
 
                 description:
@@ -168,7 +168,7 @@ const missions = {
 
             {
                 type: "CONTRAINTE",
-                icone: "📲",
+                icone: "./assets/images/icons/contrainte_media.png",
                 titre: "Faites simple !",
 
                 description:
@@ -181,7 +181,7 @@ const missions = {
 
             {
                 type: "DÉFI",
-                icone: "👥",
+                icone: "./assets/images/icons/generations.png",
                 titre: "Connectez les générations",
 
                 description:
@@ -194,7 +194,7 @@ const missions = {
 
             {
                 type: "IMPRÉVU",
-                icone: "⚡",
+                icone: "./assets/images/icons/annule.png",
                 titre: "Votre influenceur annule !",
 
                 description:
@@ -231,7 +231,7 @@ const missions = {
 
         id: 3,
 
-        icone: "🪙",
+        icone: "./assets/images/icons/icon_tronc.png",
 
         nom: "Réinventer la collecte au tronc",
 
@@ -246,7 +246,7 @@ const missions = {
 
             {
                 type: "CRÉATION",
-                icone: "💡",
+                icone: "./assets/images/icons/creation.png",
                 titre: "Réinventez le tronc",
 
                 description:
@@ -259,7 +259,7 @@ const missions = {
 
             {
                 type: "CONTRAINTE",
-                icone: "🚶",
+                icone: "./assets/images/icons/pas_de_stand.png",
                 titre: "Pas de stand !",
 
                 description:
@@ -272,7 +272,7 @@ const missions = {
 
             {
                 type: "DÉFI",
-                icone: "👥",
+                icone: "./assets/images/icons/generations.png",
                 titre: "Une collecte intergénérationnelle",
 
                 description:
@@ -285,7 +285,7 @@ const missions = {
 
             {
                 type: "IMPRÉVU",
-                icone: "😶",
+                icone: "./assets/images/icons/ignorance.png",
                 titre: "Personne ne s'arrête !",
 
                 description:
@@ -322,7 +322,7 @@ const missions = {
 
         id: 4,
 
-        icone: "🏪",
+        icone: "./assets/images/icons/icon_commercants.jpg",
 
         nom: "Mobiliser les commerçants",
 
@@ -337,7 +337,7 @@ const missions = {
 
             {
                 type: "CRÉATION",
-                icone: "💡",
+                icone: "./assets/images/icons/creation.png",
                 titre: "Imaginez votre partenariat",
 
                 description:
@@ -350,7 +350,7 @@ const missions = {
 
             {
                 type: "CONTRAINTE",
-                icone: "🤝",
+                icone: "./assets/images/icons/convaincre.png",
                 titre: "Il faut convaincre !",
 
                 description:
@@ -363,7 +363,7 @@ const missions = {
 
             {
                 type: "DÉFI",
-                icone: "👥",
+                icone: "./assets/images/icons/generations.png",
                 titre: "Faites participer le quartier",
 
                 description:
@@ -376,7 +376,7 @@ const missions = {
 
             {
                 type: "IMPRÉVU",
-                icone: "🚫",
+                icone: "./assets/images/icons/imprevu.png",
                 titre: "Plusieurs commerces refusent",
 
                 description:
@@ -412,7 +412,7 @@ const missions = {
 const jokers = {
 
     indice: {
-        icone: "💡",
+        icone: "./assets/images/icons/help-icon.png",
         nom: "Coup de pouce",
 
         description:
@@ -420,7 +420,7 @@ const jokers = {
     },
 
     benevole: {
-        icone: "☎️",
+        icone: "./assets/images/icons/sos.png",
         nom: "SOS Animateur",
 
         description:
@@ -428,7 +428,7 @@ const jokers = {
     },
 
     echange: {
-        icone: "🕵️",
+        icone: "./assets/images/icons/espion.png",
         nom: "Espion solidaire",
 
         description:

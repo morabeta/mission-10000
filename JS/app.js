@@ -51,6 +51,16 @@ function afficherEcran(idEcran) {
         nouvelEcran.classList.add("active");
     }
 
+    const branding = document.getElementById("gameBranding");
+
+    if (branding) {
+        if (idEcran === "accueil") {
+            branding.style.display = "none";
+        } else {
+            branding.style.display = "flex";
+        }
+    }
+
 }
 
 
@@ -92,10 +102,8 @@ boutonsGroupes.forEach(function (bouton) {
         }
 
         // On met les informations dans l'écran Mission
-        missionTitre.textContent =
-            missionSelectionnee.icone +
-            " " +
-            missionSelectionnee.nom;
+        missionTitre.innerHTML = `<img src="${missionSelectionnee.icone}" alt="" class="mission-titre-icone">
+        <span>${missionSelectionnee.nom}</span>`;
 
         missionDescription.textContent =
             missionSelectionnee.description;
@@ -119,11 +127,9 @@ btnLancerMission.addEventListener("click", function () {
         return;
     }
 
-    // Nom de la mission dans le header du jeu
-    jeuNomMission.textContent =
-        missionSelectionnee.icone +
-        " " +
-        missionSelectionnee.nom;
+   
+    // Nom + image de la mission dans le header du jeu
+    jeuNomMission.innerHTML = `<img src="${missionSelectionnee.icone}" alt="" class="jeu-mission-icone"> <span>${missionSelectionnee.nom}</span>`;
 
     // On affiche l'écran de jeu
     afficherEcran("jeu");

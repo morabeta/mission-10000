@@ -108,8 +108,7 @@ function afficherEtape() {
        Contenu de la carte
        ------------------------- */
 
-    carteIcone.textContent =
-        etape.icone;
+       carteIcone.innerHTML = `<img src="${etape.icone}" alt="${etape.titre}" class="carte-etape-icone">`;
 
     carteType.textContent =
         etape.type;
@@ -299,8 +298,7 @@ function utiliserJoker(typeJoker) {
 
 
     // Icône
-    jokerIcone.textContent =
-        joker.icone;
+    jokerIcone.innerHTML = `<img src="${joker.icone}" alt="${joker.nom}"class="joker-popup-icone">`;
 
     // Nom
     jokerTitre.textContent =
@@ -331,7 +329,7 @@ function utiliserJoker(typeJoker) {
                 <br><br>
         
                 Demandez l'enveloppe
-                <strong>💡 COUP DE POUCE</strong>
+                <strong>COUP DE POUCE</strong>
                 à l'un des animateurs :
                 <br><br>
         
@@ -352,7 +350,7 @@ function utiliserJoker(typeJoker) {
     else if (typeJoker === "benevole") {
 
         jokerDescription.textContent =
-            "☎️ Appelez Slimane, Eugénie ou Ahmed. "
+            "Appelez Slimane, Eugénie ou Ahmed. "
             + "Vous disposez d'une minute pour expliquer "
             + "votre problème et obtenir un conseil.";
 
@@ -363,7 +361,7 @@ function utiliserJoker(typeJoker) {
         btnLancerJoker.style.display = "inline-block";
 
         btnLancerJoker.textContent =
-            "☎️ LANCER LE SOS";
+            "LANCER LE SOS";
 
     }
 
@@ -375,7 +373,7 @@ function utiliserJoker(typeJoker) {
     else if (typeJoker === "echange") {
 
         jokerDescription.textContent =
-            "🕵️ Choisissez exactement 2 personnes de votre équipe. "
+            "Choisissez exactement 2 personnes de votre équipe. "
             + "Elles disposent d'une minute pour aller rencontrer "
             + "une autre équipe, récupérer une idée ou un conseil, "
             + "puis revenir dans leur équipe.";
